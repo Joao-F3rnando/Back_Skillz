@@ -1,0 +1,81 @@
+.header-inicial {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10vh;
+  margin: 1vh 3vh;
+  background-color: #fff;
+  height: 70px;
+}
+  
+.logo-img {
+  width: 10vh;
+}
+  
+.cia-name {
+  font-family: "Istok Web", sans-serif;
+  font-size: 5vh;
+  color: #0c403b;
+  text-transform: uppercase;
+}
+  
+.company {
+  display: flex;
+  align-items: center;
+  gap: 2vh;
+}
+
+/*** Link para páginas ***/
+
+.pages{
+    display: flex;
+    gap: 25px;
+}
+
+.pg-link{
+    text-decoration: none;
+    font-size: 18px;
+    color: #0c403b;
+    font-family: "Inter", sans-serif;
+}
+
+.sublinhado{
+    border-bottom: 3px solid rgba(64, 64, 64, 0.5);
+    padding-bottom: 3px;
+    text-decoration: none;
+    display: inline;
+}
+
+/* Barra de pesquisa */
+.search-box-input {
+  width: 300px;
+  height: 38px;
+  background-color: #f2f3f4;
+  border-radius: 35px;
+  border: none;
+  font-size: 2vh;
+
+}
+
+
+.search-box-input,
+.lupa {
+  padding: 0 4vh !important;
+}
+  
+.lupa {
+  background-image: url("../../assets/lupa1.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 5vh;
+}
+
+/*** Perfil do usuário ***/
+
+.usr-img{
+    width: 6.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}

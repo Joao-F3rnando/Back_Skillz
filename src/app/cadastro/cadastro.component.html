@@ -1,0 +1,31 @@
+<div class="header">
+    <img src="./assets/logo-reduzido.png" class="logo-img">
+    <p class="cia-name">Skillz</p>
+</div>
+<div class="body">
+    <div class="box">
+        <div class="content">
+            <div class="title">
+                <h1>Crie a sua conta</h1>
+                <hr>
+            </div>
+            <div class="login-form" >
+                <form [formGroup]="formulario" (ngSubmit)="CadUser()" >
+                    <input type="text" placeholder="Nome Completo" formControlName="nome_completo"><br>
+                    <input class="inpt-email" type="email" placeholder="E-mail" formControlName="email"><br>
+                    <input type="text" placeholder="Usuário" formControlName="nome_usuario"><br>
+                    <input type="number" placeholder="Telefone" formControlName="telefone"><br>
+                    <input type="password" placeholder="Senha" formControlName="senha"><br>
+                    <div class="btn">
+                        <button class="submit-button" type="submit" >Cadastrar</button>
+                    </div>
+                </form>
+
+            </div>
+            <div>
+                
+                <p class="crt-account">Já possui conta? <a class="crt-account bold" href="#"> Acesse agora.</a></p>
+            </div>
+        </div>
+    </div>
+</div>

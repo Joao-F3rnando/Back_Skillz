@@ -1,0 +1,153 @@
+.header-inicial {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10vh;
+  margin: 1vh 3vh;
+  background-color: #fff;
+}
+  
+.logo-img {
+  width: 10vh;
+}
+  
+.cia-name {
+  font-family: "Istok Web", sans-serif;
+  font-size: 5vh;
+  color: #0c403b;
+}
+  
+.company {
+  display: flex;
+  align-items: center;
+  gap: 2vh;
+}
+  
+/* Botões */
+.btn-null {
+  background-color: transparent;
+  border: 2px solid;
+  border-color: #0c403b;
+  color: #0c403b;
+}
+  
+.btn-fill {
+  background-color: #0c403b;
+  color: #fff;
+  border: none;
+}
+  
+.cia-name,
+.btn-null,
+.btn-fill {
+  text-transform: uppercase;
+}
+  
+.btn-fill,
+.btn-null {
+  width: 17vh;
+  height: 7vh;
+  font-family: "Inter", sans-serif;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 2vh;
+  cursor: pointer;
+}
+  
+.buttons {
+  display: flex;
+  margin-right: 5vh;
+  column-gap: 3vh;
+}
+  
+/* Barra de pesquisa */
+.search-box-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80vh;
+  height: 7vh;
+  background-color: #f2f3f4;
+  border-radius: 35px;
+  border: none;
+  font-size: 2vh;
+}
+
+
+.search-box-input,
+.lupa {
+  padding: 0 4vh !important;
+}
+  
+.lupa {
+  background-image: url("../../assets/lupa1.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 6vh;
+}
+
+/**** Config. Body ****/
+
+.body{
+  background-image: url(../../assets/background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  padding: 50px 0;
+}
+
+h1,
+span,
+.text-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+}
+
+h1{
+  margin-top: 0;
+  font-size: 10vh;
+}
+
+span{
+  width: 150vh;
+  font-size: 3.7vh;
+  text-align: center;
+}
+
+/* Config botões*/
+
+.body-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13vh;
+  margin: 10vh 0;
+}
+
+.btn1,
+.btn2{
+  height: 7vh;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 4vh;
+  text-transform: uppercase;
+}
+
+.btn1{
+  width: 41vh;
+  background-color: #D8F2E3;
+  color: #0C403B;
+  border: none;
+}
+
+.btn2{
+  width: 49vh;
+  background: transparent;
+  border: 2px solid #D8F2E3;
+  color: #D8F2E3;
+}
