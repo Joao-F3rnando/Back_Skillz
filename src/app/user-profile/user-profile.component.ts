@@ -1,16 +1,43 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { authentication } from '../Skillz_services/authentication.service';
+import * as firebase from 'firebase';
+import { User } from '../Skillz_services/user.service';
 
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.css']
+  styleUrls: ['./user-profile.component.css'],
 })
-export class UserProfileComponent {
+export class UserProfileComponent implements OnInit {
+  constructor(
+    private authentication: authentication,
+    private users: User,
+  ) {}
 
-  constructor(private authentication: authentication){
+  public email: any;
+  public isLoading: boolean = false;
+  public GetDataFromUsers: any;
+
+  ngOnInit(): void {
+    firebase.auth().onAuthStateChanged((user: any) => {
+      console.log(user);
+      if (user) {
+        this.email = user.email;
+        this.users.GetUsers(this.email).then((data) => {
+          console.log(name);
+          this.GetDataFromUsers = data;
+        });
+
+        console.log(this.email);
+      }
+    });
   }
-  public logout(): void{
+
+  public logout(): void {
+    this.isLoading = true;
+    setTimeout(() => {
+      this.isLoading = true;
       this.authentication.logout();
+    }, 1000);
   }
 }

@@ -1,6 +1,9 @@
 <app-header></app-header>
 
 <div class="body">
+     <div *ngIf="isLoading">
+    <app-loading></app-loading>
+  </div>
     <div class="title">
         <h1>Meu perfil</h1>
         <button (click)="logout()">logout</button>
@@ -8,8 +11,8 @@
     </div>
 
     <div class="badge-box">
-        <div class="box-title">
-            <h2>Fulano da Silva</h2>
+        <div class="box-title" *ngIf="GetDataFromUsers">
+            <h2>{{GetDataFromUsers.nome_usuario}}</h2>
             <hr>
         </div>
         

@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Injectable({
-    providedIn: 'root',
-  })
+  providedIn: 'root',
+})
 export class authentication {
   public token_id: any;
 
@@ -21,7 +21,7 @@ export class authentication {
           .ref(`Skillz_Users/${btoa(response.email)}`)
           .push(user);
         alert('Usuário cadastrado com sucesso');
-        this.rotas.navigate(['/login']);
+        //this.rotas.navigate(['/login']);
       })
       .catch((err: Error) => console.log(err))
       .then((response: any) => {
@@ -29,13 +29,12 @@ export class authentication {
       });
   }
 
-  public async checkAuthentication(login:any): Promise<any> {
-   
+  public async checkAuthentication(login: any): Promise<any> {
     return firebase
       .auth()
       .signInWithEmailAndPassword(login.email, login.senha)
       .then(() => {
-        alert('Autenticação realizada com sucesso');
+        //alert('Autenticação realizada com sucesso');
         firebase
           .auth()
           .currentUser?.getIdToken()
@@ -43,7 +42,7 @@ export class authentication {
             this.token_id = id;
             console.log(this.token_id);
             localStorage.setItem('id_token', id);
-            this.rotas.navigate(['/']);
+            this.rotas.navigate(['/user']);
           });
       })
       .catch((err: Error) => {
@@ -76,4 +75,16 @@ export class authentication {
       });
   }
 
+  public CheckUser(): boolean {
+    let ok: boolean = false;
+    if (localStorage.getItem('id_token') != null) {
+      this.token_id = localStorage.getItem('id_token');
+      ok = true;
+    }
+    if (this.token_id === undefined) {
+      ok = false;
+      this.rotas.navigate(['/']);
+    }
+    return ok;
+  }
 }

@@ -1,0 +1,32 @@
+<div class="header" routerLink="/">
+  <img src="./assets/logo-reduzido.png" class="logo-img">
+  <p class="cia-name">Skillz</p>
+</div>
+<div class="body">
+
+  <div class="box">
+      <div class="content">
+          <div class="title">
+              <h1></h1>
+              <span></span>
+              
+          </div>
+          <div class="login-form">
+              <form [formGroup]="formulario" >
+                  <input class="inpt-email" type="text" placeholder="Nome do desafio" formControlName="endereco"><br>
+                  <input  type="file"
+          class="form-control"
+          accept="file/*"
+          (change)="fileupload($event)">   
+                  <a class="fgt-password" href="#">Esqueci a senha</a><br>
+                  <div class="btn">
+                      <button class="submit-button" type="submit">Entrar</button>
+                  </div>
+              </form>
+          </div>
+          <div>
+              <p class="crt-account">Ainda não tem conta?  <a class="crt-account bold" routerLink="/cadastro" href="#"> Cadastre-se agora.</a></p>
+          </div>
+      </div>
+  </div>
+</div>
