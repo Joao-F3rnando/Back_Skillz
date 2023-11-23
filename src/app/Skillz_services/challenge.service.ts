@@ -11,21 +11,21 @@ export class Challenge {
     firebase
       .database()
       .ref(`Challenge`)
-      .push({ endereco: dados.endereco, numero: dados.numero })
+      .push({ endereco: dados.name })
       .then((key) => {
         this.key = key.key;
         console.log('salvo');
         firebase
           .storage()
           .ref()
-          .child(`Challenge/${this.key}`)
-          .put(dados.imagem)
+          .child(`Challenge/${dados.name}`)
+          .put(dados.file)
           .then((snapshot) => {
             snapshot.ref.getDownloadURL().then((url: any) => {
-              console.log(`url da imagem recuperada: ${url}`);
+              console.log(`url da file recuperada: ${url}`);
               firebase
                 .database()
-                .ref(`Quadras/${this.key}`)
+                .ref(`Challenge/${this.key}`)
                 .update({ url: url })
                 .then(() => {
                   console.log('Imagem Salva ');
@@ -33,5 +33,61 @@ export class Challenge {
             });
           });
       });
+  }
+  public SetFile1(data: any) {
+    firebase
+      .storage()
+      .ref()
+      .child(`Challenge/${data.name}`)
+      .put(data.file)
+      .then((snapshot) => {
+        snapshot.ref.getDownloadURL().then((url: any) => {
+          console.log(`url da file recuperada: ${url}`);
+          //return url;
+        });
+      });
+  }
+
+  public SetFile(data: any): Promise<any> {
+    return new Promise((resolve, reject) => {
+      firebase
+        .storage()
+        .ref()
+        .child(`Challenge/${data.name}`)
+        .put(data.file)
+        .then((snapshot) => {
+          snapshot.ref
+            .getDownloadURL()
+            .then((url) => {
+              console.log('file ', url);
+              firebase.database().ref('Challenge').push({url:url})
+              .then(()=>{
+                console.log('salvo');                
+              })
+              resolve(url);
+            })
+            .catch((err: any) => {
+              reject(err);
+            });
+        });
+    });
+  }
+
+  public GetFiles(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      firebase
+        .database()
+        .ref(`Challenge`)
+        .orderByKey()
+        .once('value')
+        .then((snapshot: any) => {
+          let consulta: Array<any> = [];
+          snapshot.forEach((child: any) => {
+            let teste = child.val();
+            consulta.push(teste);
+            resolve(consulta);
+          });
+        });
+    });
   }
 }

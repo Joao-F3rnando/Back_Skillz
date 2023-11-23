@@ -13,19 +13,21 @@
           </div>
           <div class="login-form">
               <form [formGroup]="formulario" >
-                  <input class="inpt-email" type="text" placeholder="Nome do desafio" formControlName="endereco"><br>
+                  <input class="inpt-email" type="text" placeholder="Nome do desafio" formControlName="name"><br>
                   <input  type="file"
           class="form-control"
           accept="file/*"
           (change)="fileupload($event)">   
-                  <a class="fgt-password" href="#">Esqueci a senha</a><br>
+                  <a class="fgt-password" href="#"></a><br>
                   <div class="btn">
-                      <button class="submit-button" type="submit">Entrar</button>
+                      <button class="submit-button" type="submit" (click)="SetFiles()">File</button>
+                      <button class="submit-button" type="submit" (click)="SetPDF()">PDF</button>                                         
                   </div>
+                  
               </form>
           </div>
           <div>
-              <p class="crt-account">Ainda não tem conta?  <a class="crt-account bold" routerLink="/cadastro" href="#"> Cadastre-se agora.</a></p>
+              <p class="crt-account">Não se esqueça de nomear corretamente o arquivo<a class="crt-account bold" routerLink="/cadastro" href="#"></a></p>
           </div>
       </div>
   </div>

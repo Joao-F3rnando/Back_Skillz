@@ -127,6 +127,7 @@ a {
   font-size: 16px;
   color: #f2f3f4;
   border: none;
+  flex: 1;
 }
 
 .crt-account {
@@ -137,4 +138,9 @@ a {
 
 .bold {
   font-weight: 600;
+}
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; /* Ajuste conforme necessário para o espaçamento desejado entre os botões */
 }

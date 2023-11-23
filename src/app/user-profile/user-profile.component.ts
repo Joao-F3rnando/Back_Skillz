@@ -40,4 +40,14 @@ export class UserProfileComponent implements OnInit {
       this.authentication.logout();
     }, 1000);
   }
+  downloadPDF(): void {
+    let pdfDownloadLink =
+      'https://firebasestorage.googleapis.com/v0/b/skillzbd-deb54.appspot.com/o/Challenge%2FTeste?alt=media&token=7f0d18d1-b9aa-447a-ac19-1fe2949cf780';
+    const link = document.createElement('a');
+    link.href = pdfDownloadLink;
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 }

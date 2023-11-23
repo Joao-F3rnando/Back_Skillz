@@ -42,7 +42,7 @@ export class authentication {
             this.token_id = id;
             console.log(this.token_id);
             localStorage.setItem('id_token', id);
-            this.rotas.navigate(['/user']);
+            this.rotas.navigate(['/myproject']);
           });
       })
       .catch((err: Error) => {
