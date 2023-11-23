@@ -11,7 +11,7 @@ export class Challenge {
     firebase
       .database()
       .ref(`Challenge`)
-      .push({ endereco: dados.name })
+      .push({ name: dados.name })
       .then((key) => {
         this.key = key.key;
         console.log('salvo');
@@ -60,11 +60,21 @@ export class Challenge {
             .getDownloadURL()
             .then((url) => {
               console.log('file ', url);
-              firebase.database().ref('Challenge').push({url:url})
-              .then(()=>{
-                console.log('salvo');                
-              })
-              resolve(url);
+              firebase
+                .database()
+                .ref('Challenge')
+                .push({ url: url })
+                .then((key) => {
+                  this.key = key.key;
+                  console.log('salvo');
+                  let data: Array<any> = [];
+                  let set = {
+                    key: this.key,
+                    url: url,
+                  };
+                  data.push(set);
+                  resolve(data);
+                });
             })
             .catch((err: any) => {
               reject(err);

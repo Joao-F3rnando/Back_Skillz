@@ -18,6 +18,7 @@ import { User } from './Skillz_services/user.service';
 import { AuthGuard } from './Skillz_services/Auth-guard.service';
 import { LoadingComponent } from './loading/loading.component';
 import { UploadFilesComponent } from './upload-files/upload-files.component';
+import { UploadChallengeComponent } from './upload-challenge/upload-challenge.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { UploadFilesComponent } from './upload-files/upload-files.component';
     UserProfileComponent,
     LoadingComponent,
     UploadFilesComponent,
+    UploadChallengeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [authentication, User, AuthGuard],

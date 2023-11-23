@@ -1,19 +1,23 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import * as firebase from 'firebase';
 import { Challenge } from '../Skillz_services/challenge.service';
 
 @Component({
-  selector: 'app-upload-files',
-  templateUrl: './upload-files.component.html',
-  styleUrl: './upload-files.component.css',
+  selector: 'app-upload-challenge',
+  templateUrl: './upload-challenge.component.html',
+  styleUrl: './upload-challenge.component.css',
 })
-export class UploadFilesComponent {
+export class UploadChallengeComponent {
   constructor(private upload: Challenge) {}
   public file: any;
+  public clear: any;
   public pdf: boolean = false;
   public arquivo: boolean = false;
   public label: any = 5;
+  public isLoading: boolean = false;
+  public feedback: boolean = true;
+  public key: any;
 
   public formulario: FormGroup = new FormGroup({
     name: new FormControl(null),
@@ -24,13 +28,22 @@ export class UploadFilesComponent {
   }
 
   public SetFiles() {
+    this.isLoading = true;
     let teste = {
       name: `${this.formulario.value.name}.zip`,
       file: this.file[0],
     };
     this.upload.SetFile(teste).then((url) => {
       console.log('URL: ', url);
+      let data = url;
       //this.downloadLink = url;
+      this.isLoading = false;
+      this.feedback = false;
+      this.arquivo = true;
+      this.clear = '';
+      this.key = data;
+      console.log(this.key[0].key);
+      //window.location.reload();
     });
     console.log(teste);
   }

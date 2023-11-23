@@ -11,6 +11,7 @@ import { MyProjectComponent } from './my-project/my-project.component';
 import { AuthGuard } from './Skillz_services/Auth-guard.service';
 import { MyChallengeComponent } from './my-challenge/my-challenge.component';
 import { UploadFilesComponent } from './upload-files/upload-files.component';
+import { UploadChallengeComponent } from './upload-challenge/upload-challenge.component';
 
 const routes: Routes = [
   { path: '', component: InicialComponent },
@@ -26,6 +27,11 @@ const routes: Routes = [
   {
     path: 'user',
     component: UserProfileComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'upload-challenge',
+    component: UploadChallengeComponent,
     canActivate: [AuthGuard],
   },
   {
