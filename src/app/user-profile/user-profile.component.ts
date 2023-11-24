@@ -12,7 +12,7 @@ export class UserProfileComponent implements OnInit {
   constructor(
     private authentication: authentication,
     private users: User,
-  ) {}
+  ) { }
 
   public email: any;
   public isLoading: boolean = false;
@@ -26,6 +26,7 @@ export class UserProfileComponent implements OnInit {
         this.users.GetUsers(this.email).then((data) => {
           console.log(name);
           this.GetDataFromUsers = data;
+          this.GetDataFromUsers.nome_usuario = this.GetDataFromUsers.nome_usuario[0].toUpperCase() + this.GetDataFromUsers.nome_usuario.substring(1);
         });
 
         console.log(this.email);
