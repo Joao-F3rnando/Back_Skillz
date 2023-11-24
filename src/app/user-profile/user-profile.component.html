@@ -9,13 +9,11 @@
         <button (click)="logout()">logout</button>
         <p class="first-description">Aqui você poderá visualizar os seus emblemas e certificados.</p>
     </div>
-
     <div class="badge-box">
         <div class="box-title" *ngIf="GetDataFromUsers">
             <h2>{{GetDataFromUsers.nome_usuario}}</h2>
             <hr>
-        </div>
-        
+        </div>        
         <div class="classificacao">
             <div>
                 <div class="badge-certificate">
@@ -25,29 +23,25 @@
                     <h3>Desafio da comunidade | Cibersecurity</h3>
                     <button type="submit" (click)="downloadPDF()">baixar certificado</button>
                 </div>
-            </div>
-    
+            </div>    
             <div>
                 <div class="badge-certificate">
                     <div class="badge-color prata">
                         <img class="badge" src="../../assets/black-badge.png" alt="">
                     </div>
                     <h3>Desafio da comunidade | Cibersecurity</h3>
-                    <button>baixar certificado</button>
+                    <button type="submit" (click)="downloadPDF()">baixar certificado</button>
                 </div>
-            </div>
-    
+            </div>    
             <div>
                 <div class="badge-certificate">
                     <div class="badge-color ouro">
                         <img class="badge" src="../../assets/black-badge.png" alt="">
                     </div>
                     <h3>Desafio da comunidade | Cibersecurity</h3>
-                    <button>baixar certificado</button>
+                    <button type="submit" (click)="downloadPDF()">baixar certificado</button>
                 </div>
-            </div>
-
-            
+            </div>        
 
         </div>
 

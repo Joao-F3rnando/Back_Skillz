@@ -1,6 +1,9 @@
 <app-header></app-header>
 <div class="body">
-    <div>
+    <div *ngIf="isLoading">
+        <app-loading></app-loading>
+      </div>
+    <div routerLink="/community">
         <img src="../../assets/tech-user-coding-woman.png" alt="">
     </div>
     <div class="content">
@@ -24,7 +27,7 @@
                 sorte e, após concluir o desaﬁo, não se esqueça de nos fornecer seu valioso 
                 feedback! Estamos ansiosos para ver seu trabalho incrível.</p>
         <div class="btn">
-            <button routerLink="/my-challenge">quero participar</button>
+            <button (click)="await()">quero participar</button>
         </div>
     </div>
 </div>

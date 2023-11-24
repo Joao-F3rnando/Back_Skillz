@@ -29,11 +29,14 @@
                 </form>
             </div>
             <div *ngIf="feedback">
-                <p class="crt-account">Não se esqueça de nomear corretamente o arquivo<a class="crt-account bold" routerLink="/cadastro" href="#"></a></p>
+            <p class="crt-account">Não se esqueça de nomear corretamente o arquivo<a class="crt-account bold" routerLink="/cadastro" href="#"></a></p>
             </div>
             <div *ngIf="arquivo">
                 
                 <p class="crt-account">Anote o seu protocolo: "{{key[0].key}}"<a class="crt-account bold" routerLink="/cadastro" href="#"></a></p>
+              </div>
+              <div *ngIf="success">
+                <p class="success font-2-s">{{success}}</p>
               </div>
               
             

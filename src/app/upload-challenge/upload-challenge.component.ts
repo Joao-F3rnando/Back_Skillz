@@ -13,6 +13,7 @@ export class UploadChallengeComponent {
   public file: any;
   public clear: any;
   public pdf: boolean = false;
+  public success: string = '';
   public arquivo: boolean = false;
   public label: any = 5;
   public isLoading: boolean = false;
@@ -38,12 +39,17 @@ export class UploadChallengeComponent {
       let data = url;
       //this.downloadLink = url;
       this.isLoading = false;
+      this.isLoading = false;
       this.feedback = false;
       this.arquivo = true;
+      this.success = 'Projeto enviado com sucesso';
       this.clear = '';
       this.key = data;
       console.log(this.key[0].key);
-      //window.location.reload();
+      setTimeout(() => {
+        window.location.reload();
+      }, 10000);
+      //
     });
     console.log(teste);
   }

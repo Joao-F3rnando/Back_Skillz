@@ -142,5 +142,33 @@ a {
 .btn-container {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px; /* Ajuste conforme necessário para o espaçamento desejado entre os botões */
+  margin-top: 10px; 
+}
+@media screen and (max-width: 768px) {
+  .header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .cia-name {
+      margin-top: 10px;
+  }
+
+  .box {
+      width: 100%;
+  }
+
+  .content {
+      max-width: 100%;
+  }
+}
+
+
+
+@media screen and (max-width: 480px) {
+  .inpt-email,
+  .form-control {
+      width: 100%;
+  }
 }

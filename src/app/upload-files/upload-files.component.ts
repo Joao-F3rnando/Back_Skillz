@@ -14,6 +14,7 @@ export class UploadFilesComponent {
   public pdf: boolean = false;
   public arquivo: boolean = false;
   public label: any = 5;
+  public isLoading:boolean=false
 
   public formulario: FormGroup = new FormGroup({
     name: new FormControl(null),

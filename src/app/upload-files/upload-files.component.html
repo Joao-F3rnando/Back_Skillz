@@ -3,7 +3,9 @@
   <p class="cia-name">Skillz</p>
 </div>
 <div class="body">
-
+    <div *ngIf="isLoading">
+        <app-loading></app-loading>
+      </div>
   <div class="box">
       <div class="content">
           <div class="title">

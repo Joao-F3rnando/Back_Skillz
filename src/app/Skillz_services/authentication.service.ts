@@ -20,8 +20,8 @@ export class authentication {
           .database()
           .ref(`Skillz_Users/${btoa(response.email)}`)
           .push(user);
-        alert('Usuário cadastrado com sucesso');
-        //this.rotas.navigate(['/login']);
+        //alert('Usuário cadastrado com sucesso');
+        this.rotas.navigate(['/login']);
       })
       .catch((err: Error) => console.log(err))
       .then((response: any) => {
