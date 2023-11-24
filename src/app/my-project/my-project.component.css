@@ -1,37 +1,37 @@
-.body{
+.body {
     background-color: #F2F3F4;
     font-family: 'Inter', sans-serif;
     padding: 20px 0;
 }
 
-h1{
+h1 {
     margin-left: 140px;
 }
 
-hr{
+hr {
     border: 0.5px solid rgba(33, 47, 61, 0.75);
     width: 92%;
 }
 
 /*** Configuração das caixas de projetos ***/
 
-.content{
+.content {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: 70px 100px;
     padding: 30px 100px;
     flex-wrap: wrap;
-    width: 1079px;
 }
 
-.box{
+.box {
     width: 279px;
     height: 370px;
     background-color: #fff;
     border-radius: 25px;
 }
 
-.img-bg{
+.img-bg {
     background-color: #0C403B;
     display: flex;
     justify-content: center;
@@ -41,12 +41,12 @@ hr{
     border-radius: 25px 25px 0 0;
 }
 
-.clg-img{
+.clg-img {
     width: 130px;
     height: 130px;
 }
 
-.description{
+.description {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,16 +54,16 @@ hr{
 }
 
 h2,
-p{
+p {
     color: #404040;
 }
 
-h2{
+h2 {
     font-size: 16px;
     margin-bottom: 10px;
 }
 
-p{
+p {
     font-size: 12px;
     width: 85%;
     text-align: center;
@@ -72,11 +72,11 @@ p{
 
 /*** Config. do botão ***/
 
-button{
+button {
     background-color: #0C403B;
     border: none;
     border-radius: 10px;
-    width:  200px;
+    width: 200px;
     height: 40px;
     color: #fff;
     text-transform: uppercase;

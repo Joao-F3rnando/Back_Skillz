@@ -1,9 +1,9 @@
 <app-header></app-header>
 
 <div class="body">
-     <div *ngIf="isLoading">
-    <app-loading></app-loading>
-  </div>
+    <div *ngIf="isLoading">
+        <app-loading></app-loading>
+    </div>
     <div class="title">
         <h1>Meu perfil</h1>
         <button (click)="logout()">logout</button>
@@ -13,39 +13,39 @@
         <div class="box-title" *ngIf="GetDataFromUsers">
             <h2>{{GetDataFromUsers.nome_usuario}}</h2>
             <hr>
-        </div>        
+        </div>
         <div class="classificacao">
             <div>
                 <div class="badge-certificate">
                     <div class="badge-color bronze">
-                        <img class="badge" src="../../assets/black-badge.png" alt="">
+                        <img class="badge-img" src="../../assets/black-badge.png" alt="">
                     </div>
                     <h3>Desafio da comunidade | Cibersecurity</h3>
                     <button type="submit" (click)="downloadPDF()">baixar certificado</button>
                 </div>
-            </div>    
+            </div>
             <div>
                 <div class="badge-certificate">
                     <div class="badge-color prata">
-                        <img class="badge" src="../../assets/black-badge.png" alt="">
+                        <img class="badge-img" src="../../assets/black-badge.png" alt="">
                     </div>
                     <h3>Desafio da comunidade | Cibersecurity</h3>
                     <button type="submit" (click)="downloadPDF()">baixar certificado</button>
                 </div>
-            </div>    
+            </div>
             <div>
                 <div class="badge-certificate">
                     <div class="badge-color ouro">
-                        <img class="badge" src="../../assets/black-badge.png" alt="">
+                        <img class="badge-img" src="../../assets/black-badge.png" alt="">
                     </div>
                     <h3>Desafio da comunidade | Cibersecurity</h3>
                     <button type="submit" (click)="downloadPDF()">baixar certificado</button>
                 </div>
-            </div>        
+            </div>
 
         </div>
 
-    </div>    
+    </div>
 
-    
+
 </div>

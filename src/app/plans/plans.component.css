@@ -1,28 +1,32 @@
-.body{
+.body {
     background-color: #F2F3F4;
     font-family: 'Inter', sans-serif;
     padding: 20px 0;
 }
 
-.boxes{
+.boxes {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
 }
 
-.title{
+.title {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-h1{
+h1 {
     font-size: 32px;
     color: #0C403B;
     margin-bottom: 0;
 }
 
-.first-description{
+.first-description {
     font-size: 14px;
     width: 68%;
     text-align: center;
@@ -32,22 +36,21 @@ h1{
 
 .jr-box,
 .sr-box,
-.pl-box{
+.pl-box {
     background-color: #FBFAFF;
     border: 1px solid #BDC3C7;
     width: 280px;
     height: 390px;
-    margin: 50px 0 20px 100px;
     border-radius: 25px;
 }
 
 h2,
 span,
-button{
+button {
     text-transform: uppercase;
 }
 
-.box-title{
+.box-title {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -56,67 +59,67 @@ button{
     margin-top: 10px;
 }
 
-h2{
+h2 {
     font-size: 32px;
     margin-bottom: 10px;
 }
 
-img{ 
+img {
     width: 55px;
     height: 55px;
 }
 
-.subtitle{
+.subtitle {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.sub-desc{
+.sub-desc {
     font-size: 14px;
     font-weight: bold;
 }
 
 /* Ordenando a lista, preço e o botão */
 
-.list{
+.list {
     display: flex;
     justify-content: center;
     margin-left: 20px;
 }
 
-ul li{
+ul li {
     font-size: 13px;
     width: 85%;
 }
 
-.list-jr-pl{
+.list-jr-pl {
     margin-top: 10px;
 }
 
-.price{
+.price {
     display: flex;
     justify-content: center;
 }
 
-.jr-sr{
+.jr-sr {
     margin-top: 35px;
 }
 
-span{
+span {
     color: #0C403B;
     font-size: 20px;
     font-weight: bold;
 }
 
-.subscribe{
+.subscribe {
     display: flex;
     justify-content: center;
     margin-top: 10px;
 }
 
 .subs,
-.subs-green{
+.subs-green {
     width: 150px;
     height: 40px;
     border-radius: 10px;
@@ -124,13 +127,13 @@ span{
     font-size: 18px;
 }
 
-.subs{
+.subs {
     background-color: transparent;
     border: 2px solid #0C403B;
     color: #0C403B;
 }
 
-.subs-green{
+.subs-green {
     background-color: #0C403B;
     border: none;
     color: #fff;
